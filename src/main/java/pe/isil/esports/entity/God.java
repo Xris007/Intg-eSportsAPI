@@ -44,7 +44,7 @@ public class God {
     private Double health;
 
     @Column
-    private Double mana;
+    private Double energy;
 
     @Column
     private Double speed;

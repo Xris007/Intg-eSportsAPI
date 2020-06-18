@@ -41,7 +41,7 @@ public class DataInitializer implements CommandLineRunner {
         champion.setAttack_speed(0.651);
         champion.setRange(175.0);
         champion.setArmor(38.0);
-        champion.setMagic_resistance(32.1);
+        champion.setResistance(32.1);
         championService.create(champion);
 
         God god = new God();
@@ -53,7 +53,7 @@ public class DataInitializer implements CommandLineRunner {
         god.setPoster_path("https://gamepedia.cursecdn.com/smite_gamepedia/thumb/6/66/SkinArt_Achilles_Default.jpg/375px-SkinArt_Achilles_Default.jpg");
         god.setBackground_path("https://web2.hirez.com/smite-media//wp-content/uploads/2018/02/Smite-Web-Achilles-Header-2560x917.jpg");
         god.setHealth(475.0);
-        god.setMana(205.0);
+        god.setEnergy(205.0);
         god.setSpeed(370.0);
         god.setRange(16.0);
         god.setAttack_speed(0.95);

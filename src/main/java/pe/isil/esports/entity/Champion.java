@@ -56,5 +56,5 @@ public class Champion {
     private Double armor;
 
     @Column
-    private Double magic_resistance;
+    private Double resistance;
 }
