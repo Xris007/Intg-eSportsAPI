@@ -23,7 +23,7 @@ public class Champion {
     private String title;
 
     @Column
-    private String primary_rol;
+    private String rol;
 
     @Column
     private String attributes;

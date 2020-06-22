@@ -54,4 +54,16 @@ public class Hero {
 
     @Column
     private String move_speed;
+
+    @Column
+    private String health;
+
+    @Column
+    private String hp_regeneration;
+
+    @Column
+    private String mana;
+
+    @Column
+    private String mp_regeneration;
 }

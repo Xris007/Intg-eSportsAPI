@@ -23,7 +23,7 @@ public class God {
     public String title;
 
     @Column
-    public String class_god;
+    public String type;
 
     @Column
     public String attributes;
