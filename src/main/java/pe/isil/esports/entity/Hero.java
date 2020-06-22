@@ -20,32 +20,38 @@ public class Hero {
     private String name;
 
     @Column
-    private String roles;
+    private String attribute;
 
     @Column
     private String type;
 
     @Column
+    private String roles;
+
+    @Column
     private String poster_path;
 
     @Column
-    private String background_path;
+    private String backdrop_path;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
     @Column
-    private Double strength;
+    private String strength;
 
     @Column
-    private Double agility;
+    private String agility;
 
     @Column
-    private Double intelligence;
+    private String intelligence;
 
     @Column
-    private Double damage;
+    private String attack_damage;
 
     @Column
-    private Double move_speed;
+    private String armor;
 
     @Column
-    private Double armor;
+    private String move_speed;
 }

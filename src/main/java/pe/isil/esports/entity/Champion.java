@@ -26,35 +26,44 @@ public class Champion {
     private String primary_rol;
 
     @Column
-    private String secondary_rol;
+    private String attributes;
 
     @Column
     private String poster_path;
 
     @Column
-    private String background_path;
+    private String backdrop_path;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
     @Column
-    private Double health;
+    private String attack_damage;
 
     @Column
-    private Double regeneration;
+    private String attack_speed;
 
     @Column
-    private Double move_speed;
+    private String attack_range;
 
     @Column
-    private Double attack_damage;
+    private String move_speed;
 
     @Column
-    private Double attack_speed;
+    private String armor;
 
     @Column
-    private Double range;
+    private String magic_resistance;
 
     @Column
-    private Double armor;
+    private String hp_regeneration;
 
     @Column
-    private Double resistance;
+    private String mp_regeneration;
+
+    @Column
+    private String health;
+
+    @Column
+    private String mana;
 }

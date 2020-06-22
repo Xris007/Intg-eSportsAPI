@@ -23,50 +23,47 @@ public class God {
     public String title;
 
     @Column
-    public String pantheon;
-
-    @Column
-    public String type;
-
-    @Column
     public String class_god;
 
     @Column
-    public String attribute;
+    public String attributes;
 
     @Column
     private String poster_path;
 
     @Column
-    private String background_path;
+    private String backdrop_path;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
     @Column
-    private Double health;
+    private String attack_damage;
 
     @Column
-    private Double energy;
+    private String attack_speed;
 
     @Column
-    private Double speed;
+    private String attack_range;
 
     @Column
-    private Double range;
+    private String move_speed;
 
     @Column
-    private Double attack_speed;
+    private String armor;
 
     @Column
-    private Double damage;
+    private String magic_resistance;
 
     @Column
-    private Double physical_protection;
+    private String hp_regeneration;
 
     @Column
-    private Double magic_protection;
+    private String mp_regeneration;
 
     @Column
-    private Double hp_regeneration;
+    private String health;
 
     @Column
-    private Double mp_regeneration;
+    private String mana;
 }
