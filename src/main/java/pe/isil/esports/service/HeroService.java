@@ -2,6 +2,7 @@ package pe.isil.esports.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.isil.esports.entity.Champion;
 import pe.isil.esports.entity.Hero;
 import pe.isil.esports.repository.HeroRepository;
 
@@ -19,6 +20,10 @@ public class HeroService {
 
     public void create(Hero hero) {
         repository.save(hero);
+    }
+
+    public void createAll(List<Hero> heroes) {
+        repository.saveAll(heroes);
     }
 
     public void update(Hero hero) {

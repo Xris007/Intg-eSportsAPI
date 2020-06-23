@@ -34,6 +34,13 @@ public class GodResource {
         return new ResponseEntity(god, HttpStatus.CREATED);
     }
 
+    @PostMapping("/smite/all")
+    public ResponseEntity createAll(@RequestBody List<God> gods) {
+        service.createAll(gods);
+
+        return new ResponseEntity(gods, HttpStatus.CREATED);
+    }
+
     @PutMapping("/smite/{id}")
     public ResponseEntity update(@PathVariable Long id, @RequestBody God god) {
         God current = service.findById(id);

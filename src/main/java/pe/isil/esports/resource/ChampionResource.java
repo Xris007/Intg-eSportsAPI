@@ -34,6 +34,13 @@ public class ChampionResource {
         return new ResponseEntity(champion, HttpStatus.CREATED);
     }
 
+    @PostMapping("/lol/all")
+    public ResponseEntity createAll(@RequestBody List<Champion> champions) {
+        service.createAll(champions);
+
+        return new ResponseEntity(champions, HttpStatus.CREATED);
+    }
+
     @PutMapping("/lol/{id}")
     public ResponseEntity update(@PathVariable Long id, @RequestBody Champion champion) {
         Champion current = service.findById(id);

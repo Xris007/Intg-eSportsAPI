@@ -21,6 +21,10 @@ public class ChampionService {
         repository.save(champion);
     }
 
+    public void createAll(List<Champion> champions) {
+        repository.saveAll(champions);
+    }
+
     public void update(Champion champion) {
         repository.save(champion);
     }

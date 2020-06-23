@@ -34,6 +34,13 @@ public class HeroResource {
         return new ResponseEntity(hero, HttpStatus.CREATED);
     }
 
+    @PostMapping("/dota/all")
+    public ResponseEntity createAll(@RequestBody List<Hero> heroes) {
+        service.createAll(heroes);
+
+        return new ResponseEntity(heroes, HttpStatus.CREATED);
+    }
+
     @PutMapping("/dota/{id}")
     public ResponseEntity update(@PathVariable Long id, @RequestBody Hero hero) {
         Hero current = service.findById(id);
