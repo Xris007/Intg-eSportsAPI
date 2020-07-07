@@ -16,7 +16,7 @@ public class GodResource {
     @Autowired
     GodService service;
 
-    @GetMapping("/smite")
+    @GetMapping("/public/smite")
     public ResponseEntity getAll() {
         List<God> gods = service.getAll();
 
@@ -27,21 +27,21 @@ public class GodResource {
         return new ResponseEntity(gods, HttpStatus.OK);
     }
 
-    @PostMapping("/smite")
+    @PostMapping("/private/smite")
     public ResponseEntity create(@RequestBody God god) {
         service.create(god);
 
         return new ResponseEntity(god, HttpStatus.CREATED);
     }
 
-    @PostMapping("/smite/all")
+    @PostMapping("/private/smite/all")
     public ResponseEntity createAll(@RequestBody List<God> gods) {
         service.createAll(gods);
 
         return new ResponseEntity(gods, HttpStatus.CREATED);
     }
 
-    @PutMapping("/smite/{id}")
+    @PutMapping("/private/smite/{id}")
     public ResponseEntity update(@PathVariable Long id, @RequestBody God god) {
         God current = service.findById(id);
 
@@ -55,7 +55,7 @@ public class GodResource {
         return new ResponseEntity(god, HttpStatus.OK);
     }
 
-    @DeleteMapping("/smite/{id}")
+    @DeleteMapping("/private/smite/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
         God current = service.findById(id);
 
@@ -68,7 +68,7 @@ public class GodResource {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @GetMapping("/smite/{id}")
+    @GetMapping("/public/smite/{id}")
     public ResponseEntity findById(@PathVariable Long id) {
         God god = service.findById(id);
 

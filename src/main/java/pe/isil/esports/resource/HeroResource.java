@@ -16,7 +16,7 @@ public class HeroResource {
     @Autowired
     HeroService service;
 
-    @GetMapping("/dota")
+    @GetMapping("/public/dota")
     public ResponseEntity getAll() {
         List<Hero> heroes = service.getAll();
 
@@ -27,21 +27,21 @@ public class HeroResource {
         return new ResponseEntity(heroes, HttpStatus.OK);
     }
 
-    @PostMapping("/dota")
+    @PostMapping("/private/dota")
     public ResponseEntity create(@RequestBody Hero hero) {
         service.create(hero);
 
         return new ResponseEntity(hero, HttpStatus.CREATED);
     }
 
-    @PostMapping("/dota/all")
+    @PostMapping("/private/dota/all")
     public ResponseEntity createAll(@RequestBody List<Hero> heroes) {
         service.createAll(heroes);
 
         return new ResponseEntity(heroes, HttpStatus.CREATED);
     }
 
-    @PutMapping("/dota/{id}")
+    @PutMapping("/private/dota/{id}")
     public ResponseEntity update(@PathVariable Long id, @RequestBody Hero hero) {
         Hero current = service.findById(id);
 
@@ -55,7 +55,7 @@ public class HeroResource {
         return new ResponseEntity(hero, HttpStatus.OK);
     }
 
-    @DeleteMapping("/dota/{id}")
+    @DeleteMapping("/private/dota/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
         Hero current = service.findById(id);
 
@@ -68,7 +68,7 @@ public class HeroResource {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @GetMapping("/dota/{id}")
+    @GetMapping("/public/dota/{id}")
     public ResponseEntity findById(@PathVariable Long id) {
         Hero hero = service.findById(id);
 

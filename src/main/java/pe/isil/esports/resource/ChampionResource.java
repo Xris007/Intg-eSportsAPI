@@ -16,7 +16,7 @@ public class ChampionResource {
     @Autowired
     ChampionService service;
 
-    @GetMapping("/lol")
+    @GetMapping("/public/lol")
     public ResponseEntity getAll() {
         List<Champion> champions = service.getAll();
 
@@ -27,21 +27,21 @@ public class ChampionResource {
         return new ResponseEntity(champions, HttpStatus.OK);
     }
 
-    @PostMapping("/lol")
+    @PostMapping("/private/lol")
     public ResponseEntity create(@RequestBody Champion champion) {
         service.create(champion);
 
         return new ResponseEntity(champion, HttpStatus.CREATED);
     }
 
-    @PostMapping("/lol/all")
+    @PostMapping("/private/lol/all")
     public ResponseEntity createAll(@RequestBody List<Champion> champions) {
         service.createAll(champions);
 
         return new ResponseEntity(champions, HttpStatus.CREATED);
     }
 
-    @PutMapping("/lol/{id}")
+    @PutMapping("/private/lol/{id}")
     public ResponseEntity update(@PathVariable Long id, @RequestBody Champion champion) {
         Champion current = service.findById(id);
 
@@ -55,7 +55,7 @@ public class ChampionResource {
         return new ResponseEntity(champion, HttpStatus.OK);
     }
 
-    @DeleteMapping("/lol/{id}")
+    @DeleteMapping("/private/lol/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
         Champion current = service.findById(id);
 
@@ -68,7 +68,7 @@ public class ChampionResource {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @GetMapping("/lol/{id}")
+    @GetMapping("/public/lol/{id}")
     public ResponseEntity findById(@PathVariable Long id) {
         Champion champion = service.findById(id);
 
